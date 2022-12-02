@@ -10,6 +10,7 @@ const ChatsScreen = () => {
             className="w-full"
             data={chats}
             renderItem={({ item }) => <ChatListItem chat={item} />}
+            style={{ backgroundColor: 'whitesmoke' }}
          />
       </>
    )

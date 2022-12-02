@@ -2,11 +2,12 @@ import { StyleSheet, View, TextInput } from 'react-native'
 import React from 'react'
 import { AntDesign, MaterialIcons } from '@expo/vector-icons'
 import { Controller } from 'react-hook-form'
+import { SafeAreaView } from 'react-native-safe-area-context'
 
 
 const InputBox = ({ control, name, handleSubmit, onSend }) => {
    return (
-      <View className="flex-row bg-gray-100 p-2 items-center">
+      <SafeAreaView edges={['bottom']} className="flex-row bg-gray-100 p-2 items-center">
          {/* Icon */}
          <AntDesign name="plus" size={24} color="royalblue" />
          {/* Text Input */}
@@ -39,7 +40,7 @@ const InputBox = ({ control, name, handleSubmit, onSend }) => {
                borderRadius: 20,
                overflow: 'hidden',
             }]} />
-      </View>
+      </SafeAreaView>
    )
 }
 

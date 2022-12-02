@@ -1,13 +1,19 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, Pressable } from 'react-native'
 import React from 'react'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
+import { useNavigation } from '@react-navigation/native'
+import { roundToNearestPixel } from 'nativewind'
 dayjs.extend(relativeTime)
 
 
 const ChatListItem = ({chat}) => {
+
+  const navigation = useNavigation()
+  
+
   return (
-    <View className="flex flex-row my-[1px] ">
+    <Pressable onPress={() => navigation.navigate('Chat', { id: chat.id, name: chat.user.name })} className="flex flex-row my-[1px] ">
       <View className="mx-4">
         <Image
           source={{ uri: chat.user.image }}
@@ -21,7 +27,7 @@ const ChatListItem = ({chat}) => {
         </View>
         <Text numberOfLines={2} className="text-gray-400 text-md  pr-4">{chat.lastMessage.text}</Text>
       </View>
-    </View>
+    </Pressable>
   )
 }
 

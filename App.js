@@ -1,21 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
 import Navigator from './src/navigation';
+
+import { Amplify } from 'aws-amplify';
+import config from '.'
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <View className="flex-1" style={{ backgroundColor: 'whitesmoke'}}>
       <Navigator />
       <StatusBar style="auto" />
     </View>
   );
 }
+``
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
